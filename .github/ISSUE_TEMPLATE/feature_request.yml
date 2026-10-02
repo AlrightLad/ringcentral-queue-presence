@@ -1,0 +1,33 @@
+name: Feature request
+description: Propose a change to the client
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you cannot do today, and what it costs you. A concrete case beats a general one.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What the client should do instead. If it touches what gets written to a queue, describe the plan it would send and how the read-back verifies it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: Writes still happen only when `RC_WRITE_ENABLED` is exactly `true` and no dry run was requested
+          required: true
+        - label: Protected members are still never written, in either direction
+          required: true
+        - label: Every write is still followed by a read-back that throws on any unconfirmed row
+          required: true

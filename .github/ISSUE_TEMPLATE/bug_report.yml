@@ -1,0 +1,59 @@
+name: Bug report
+description: The client behaves differently from what the README or the code says
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before posting, redact everything that identifies your tenant: account and queue ids, member ids, extension numbers, phone numbers, names and credentials. Replace them with placeholders. Anything that reaches this public tracker stays in its history.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and where the client runs (workstation, scheduled job, CI runner, container)
+      placeholder: Ubuntu 24.04, cron on a jump host
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      description: Output of `node --version`
+      placeholder: v24.x
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: RingCentral environment
+      description: Production or sandbox server, and the grant used (JWT or password)
+      placeholder: platform.ringcentral.com, JWT grant
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command and commit
+      description: The CLI command or library call, with `RC_WRITE_ENABLED` state, and the commit SHA
+      placeholder: node src/cli.ts apply --holder-ext 1001 --dry-run at fc31ccf
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Exact error
+      description: The message verbatim and the exit code. For a read-back failure, the "did not apply" line names the rows; keep the row names redacted.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Result excerpt
+      description: The returned `before` / `sent` / `after` records with ids and names redacted
+      render: text
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: Point at the README section or the test that describes the behaviour you expected

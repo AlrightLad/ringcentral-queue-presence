@@ -1,5 +1,7 @@
 # ringcentral-queue-presence
 
+![CI](https://github.com/AlrightLad/ringcentral-queue-presence/actions/workflows/ci.yml/badge.svg)
+
 A small client that makes exactly one member of a RingCentral call queue the enabled one,
 and proves it did. Extracted from an on-call rotation that writes queue presence once a day
 and after every roster change; the rotation half lives in
