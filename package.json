@@ -1,0 +1,21 @@
+{
+  "name": "ringcentral-queue-presence",
+  "version": "0.1.0",
+  "description": "Small, documented client for RingCentral call-queue presence: cached auth, explicit full-member writes, read-back verification",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "show": "node src/cli.ts show",
+    "plan": "node src/cli.ts plan",
+    "apply": "node src/cli.ts apply"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
+  }
+}
